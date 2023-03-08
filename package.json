@@ -1,0 +1,22 @@
+{
+  "name": "project--pixelartmaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orelso/Project--PixelArtMaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Orelso/Project--PixelArtMaker/issues"
+  },
+  "homepage": "https://github.com/Orelso/Project--PixelArtMaker#readme",
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  }
+}

@@ -65,14 +65,6 @@ gridButton.addEventListener("click", () => {
       col.classList.add("gridCol");
       /* We need unique ids for all columns (for touch screen specifically) */
       col.setAttribute("id", `gridCol${count}`);
-
-      /*
-      For eg if deviceType = "mouse"
-      the statement for the event would be events[mouse].down which equals to mousedown
-      if deviceType="touch"
-      the statement for event would be events[touch].down which equals to touchstart
-       */
-
       col.addEventListener(events[deviceType].down, () => {
         //user starts drawing
         draw = true;
@@ -145,8 +137,8 @@ gridHeight.addEventListener("input", () => {
 });
 
 window.onload = () => {
-  gridWidth.value = 0;
-  gridHeight.value = 0;
+  gridWidth.value = 50;
+  gridHeight.value = 50;
 };
 
 // Select the screenshot button
@@ -156,23 +148,20 @@ let screenshotButton = document.getElementById("download-screenshot");
 screenshotButton.addEventListener("click", () => {
   // Set the filename for the screenshot
   let filename = "screenshot.png";
-  
+
   // Call the html2canvas library to capture the screenshot of the container element
-  html2canvas(container).then(canvas => {
+  html2canvas(container).then((canvas) => {
     // Convert the canvas to a data URL
     let dataUrl = canvas.toDataURL("image/png");
-    
+
     // Create a temporary link element
     let link = document.createElement("a");
     link.download = filename;
     link.href = dataUrl;
-    
+
     // Add the link to the DOM and simulate a click to trigger the download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   });
 });
-
-
-
